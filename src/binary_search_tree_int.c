@@ -166,7 +166,7 @@ bst_int delete(bst_int tree, int value) {
         else if (is_empty(left_child((tree))) ^ is_empty(right_child((tree)))) {
 
             if (!is_empty(left_child((tree)))) {            // if the left is empty the function return true, so negating it it mean that the it will go
-                                                        // through just when the left is not empty 
+                                                            // through just when the left is not empty 
                 bst_int temp = tree->left;
                 free(tree);
                 return(temp);
@@ -199,12 +199,37 @@ bst_int delete(bst_int tree, int value) {
 }
 
 
+//In an in-order traversal, you visit the nodes of the tree in the following order:
+// Visit the left subtree.
+// Visit the root node.
+// Visit the right subtree.
+// For a binary search tree, this traversal will print the node values in ascending order.
+void in_order_dfs_infix(bst_int tree) {
+    if (is_empty(tree)) {
+        return;
+    }
+
+    // go left
+    in_order_dfs_infix(tree->left);
+
+    // print
+    printf("%d ", tree->value);
+
+    // go right
+    in_order_dfs_infix(tree->right);
+}
 
 
-void in_order_dfs_infix(bst_int tree) {}
+void deallocate_bst(bst_int tree) {
+    if (is_empty(tree)) {
+        return;
+    }
 
+    deallocate_bst(tree->left);
+    deallocate_bst(tree->right);
 
-void deallocate_bst(bst_int tree) {}
+    free(tree);
+}
 
 
 

@@ -6,25 +6,25 @@ int main() {
 
     bst_int albero = nil();
 
-    albero = insert(albero, 5);
-
-    albero = insert(albero, 10);
-
-    albero = insert(albero, 8);
-
-    albero = insert(albero, 15);
-
-    albero = insert(albero, 4);
-
-    albero = insert(albero, 3);
+    albero = insert(albero, 1);
 
     albero = insert(albero, 2);
 
-    albero = insert(albero, 18);
-    
-    albero = insert(albero, 13);
+    albero = insert(albero, 3);
 
-    albero = insert(albero, 14);
+    albero = insert(albero, 4);
+
+    albero = insert(albero, 5);
+
+    albero = insert(albero, 6);
+
+    albero = insert(albero, 7);
+
+    albero = insert(albero, 8);
+    
+    albero = insert(albero, 9);
+
+    albero = insert(albero, 10);
 
     albero = insert(albero, 11);
 
@@ -38,9 +38,14 @@ int main() {
 
     // print_bst(sotto_albero);
 
-    albero = delete(albero, 15);
+    albero = delete(albero, 10);
 
     print_bst(albero);
+
+    in_order_dfs_infix(albero);
+    printf("\n");
+
+    deallocate_bst(albero);
 
 
     return 0;
