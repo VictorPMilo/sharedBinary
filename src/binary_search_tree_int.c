@@ -19,10 +19,6 @@ void print_level(bst_int tree, int level) {
     print_level(tree->right, level + 1);
 }
 
-bst_int go_to_max_leaf(bst_int tree) {
-    //to cpmplete
-    return tree;
-}
 
 int max(int a, int b) {
     return (a > b) ? a : b;
